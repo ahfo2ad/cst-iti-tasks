@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        /* #mytab {
+            width: 200px;
+        
+        } */
+    </style>
+</head>
+<body>
+    <input type="text" name="desc" id="">
+    <button onclick="adding()">add</button>
+    <table id="mytab" border="1">
+        <tr>
+            <td>no.</td>
+            <td>news</td>
+        </tr>
+    </table>
+    <button onclick="countrows()">count rows</button>
+    <script>
+
+        var counter = 1;
+
+        function adding() {
+
+            // get x , y from deocument
+
+            var x = document.querySelector("input");
+
+            var y = document.getElementById("mytab");
+
+            // create new tr
+
+            var newtr = document.createElement("tr");
+
+            // create new first td and append it to the tr
+
+            var newtd = document.createElement("td");
+
+            newtr.appendChild(newtd);
+
+            newtd.innerText += counter++;
+
+            // create new second td and append it to the tr
+
+            var sectd = document.createElement("td");
+
+            newtr.appendChild(sectd);
+
+            // get value from input
+
+            sectd.innerText = x.value;
+
+            // append tr to the table
+
+            y.appendChild(newtr);
+
+            // console.log(counter);
+
+        }
+
+        // founction to count tr in the table
+        function countrows() {
+
+            console.log(counter-1);
+            document.write(counter-1);
+        }
+        
+        
+    </script>
+</body>
+</html>

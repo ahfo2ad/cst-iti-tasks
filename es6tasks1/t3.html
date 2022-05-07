@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+            // receive values from user
+        let projectid =Number(prompt("enter projcet id")),
+            duration =Number(prompt("enter projcet duration")),          
+            projectname = prompt("enter projcet name");
+
+            console.log(projectid);
+            console.log(projectname);
+            console.log(duration);
+        
+        let project = {
+            ['projectid'] : projectid,
+            ['projectname'] : projectname,
+            ['duration'] : duration,
+            [projectname+" printdata"] : function() {
+
+                return this["id " + projectid] + " : " +
+                        this["name" + projectname] + " : " +
+                        this["duration" + duration];
+            }
+        }
+        console.log(project);
+
+        // function isNewTextValid(value){
+        //     return value.match(/^[a-zA-z]/)
+        // }
+    </script>
+</body>
+</html>

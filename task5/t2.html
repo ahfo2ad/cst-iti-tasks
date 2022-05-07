@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var x = prompt("enter values separated by spaces");
+        console.log(x);
+
+        var y = x.split(" ");
+        console.log(y);
+
+        document.write("<table border='1'><tr> <td>values</td> </tr>");           
+
+            for(var i =0; i<y.length;i++) {
+                flag = i;
+            
+                document.write("<tr> <td>" + y[i] + "</td> </tr>");
+
+                for(var j=0; j<y.length;j++) {
+
+                    if(y[j] == y[i]) {
+
+                        console.log(" repeated at " + y.indexOf(y[j], flag));
+
+                        // document.write(" repeated at " + y.indexOf(y[j]));
+
+                    }
+                }
+
+            }          
+
+        document.write("</table>");
+    </script>
+</head>
+<body>
+    <table></table>
+</body>
+</html>

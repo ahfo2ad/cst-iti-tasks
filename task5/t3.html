@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // trimming and remove spaces 
+
+        function removeSpacing(str) {
+            return str.trim().length === 0;
+        }
+
+        // confirmation function 
+        function confirmation() {
+            // confirm("do you want to repeat");
+            if(confirm("do you want to repeat") == true) mainfun();
+            
+            
+        }
+
+        function mainfun(){
+
+            do {
+            // var no = Number( prompt("enter no"));
+            var no = prompt("enter no");
+            console.log(no);
+            var y = no.split("");
+            console.log(y);
+            }
+            while(!Number(no) && removeSpacing(no))
+
+            var mult = prompt("what is your choise");
+            console.log(mult);
+
+
+            switch(mult) {
+
+                case "a":
+                    document.write(y + "<br>");
+                    confirmation();
+                    break;
+
+                case "b":
+                    var newar = y.sort();
+                    // var eee = a-b;
+                    document.write(newar + "<br>");
+                    confirmation();
+                    break;
+
+                case "c":
+                    var sortsec = y.sort().reverse();
+                    // var eee = a-b;
+                    document.write(sortsec + "<br>");
+                    confirmation();
+                    break;
+
+                case "d":
+                    // var sortsec = y.reverse();
+                    // var eee = a-b;
+                    document.write(y.reverse());
+                    confirmation();
+                    break;
+
+                case "e":
+                    for(var i=0; i<y.length;i++) {
+
+                        if(y[i] % 2 == 0) {
+
+                            console.log(y[i]);
+                            document.write(y[i] + "<br>");
+                        }
+                        else {
+                            alert("there is no even number");
+                        }
+                        
+                    }
+                    confirmation();
+                    break;
+
+                case "f":
+
+                    var div = prompt("division number");
+
+                    for(var i=0; i<y.length;i++) {
+
+                        if(y[i] % div == 0) {
+
+                            console.log(y[i]);
+                            document.write(y[i] + "<br>");
+                        }
+                        else {
+                            alert("can't divide that number");
+                        }
+                        
+                    }
+                    confirmation();
+                    break;
+
+                case "g":
+
+                    for(var i=0; i<y.length;i++) {
+
+                        var garr = (y[i] * 30) / 100;
+
+                        document.write(garr + "<br>");
+                        console.log(garr);
+                        
+                    }
+                    confirmation();
+                    break;
+
+                case "h":
+
+                    for(var i=0; i<y.length;i++) {
+
+                        // y[i].concat("***");
+
+                        document.write(y[i].concat("***") + "<br>");
+                        console.log(y[i].concat("***"));
+                        
+                    }
+                    confirmation();
+                    break;
+
+                default:
+
+                    confirmation();
+                    break;
+
+            }
+
+        }
+        mainfun();
+        // do {
+        //     // var no = Number( prompt("enter no"));
+        //     var no = prompt("enter no");
+        //     console.log(no);
+        //     var y = no.split("");
+        //     console.log(y);
+        // }
+        // while(!Number(no))
+
+        // var mult = prompt("what is your choise");
+        // console.log(mult);
+
+
+        // switch(mult) {
+
+        //     case "a":
+        //         document.write(y);
+        //         break;
+
+        //     case "b":
+        //         var sortasc = y.sort();
+        //         // var eee = a-b;
+        //         document.write(newar);
+        //         break;
+
+        //     case "c":
+        //         var sortsec = y.sort().reverse();
+        //         // var eee = a-b;
+        //         document.write(sortsec);
+        //         break;
+
+        //     case "d":
+        //         // var sortsec = y.reverse();
+        //         // var eee = a-b;
+        //         document.write(y.reverse());
+        //         break;
+
+        //     case "e":
+        //         for(var i=0; i<y.length;i++) {
+
+        //             if(y[i] % 2 == 0) {
+
+        //                 console.log(y[i]);
+        //                 document.write(y[i] + "<br>");
+        //             }
+        //             else {
+        //                 alert("there is no even number");
+        //             }
+                    
+        //         }
+        //         break;
+
+        //     case "f":
+
+        //         var div = prompt("division number");
+
+        //         for(var i=0; i<y.length;i++) {
+
+        //             if(y[i] % div == 0) {
+
+        //                 console.log(y[i]);
+        //                 document.write(y[i] + "<br>");
+        //             }
+        //             else {
+        //                 alert("can't divide that number");
+        //             }
+                    
+        //         }
+        //         break;
+
+        //     case "g":
+
+        //         for(var i=0; i<y.length;i++) {
+
+        //             var garr = (y[i] * 30) / 100;
+
+        //             document.write(garr + "<br>");
+        //             console.log(garr);
+                    
+        //         }
+        //         break;
+
+        //     case "h":
+
+        //         for(var i=0; i<y.length;i++) {
+
+        //             // y[i].concat("***");
+
+        //             document.write(y[i].concat("***") + "<br>");
+        //             console.log(y[i].concat("***"));
+                    
+        //         }
+        //         break;
+
+        // };
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

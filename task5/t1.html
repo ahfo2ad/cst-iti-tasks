@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //first solution by eval fun
+
+        // var x = prompt("enter values separated by comma");
+
+        // var y = x.split(",");
+        // console.log(y);
+        // var sum = 0;
+        
+        // console.log(y.join("+"));
+        // console.log (eval(y.join("+")));
+        // console.log (eval(y.join("*")));
+        
+        //second
+
+        var x = prompt("enter values separated by comma");
+
+        var y = x.split(",");
+        
+        var sum = 0;
+        for(var i =0; i<y.length;i++) {
+            // parseInt(y[i]);
+            sum += parseInt(y[i]);
+            // console.log(sum);
+        }
+        console.log("sum = " + sum);
+        document.write("sum = " + sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

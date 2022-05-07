@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let arr = [2, 5, 18, 50, -10, 70, 51, 30, -80, 100, 200];
+
+        let x=   arr.sort((a, b) => a-b)
+        console.log  ("ascending : " + x);
+
+        let y=   x.reverse()
+        console.log ("descending : " + y);
+
+        console.log("min value : " + Math.min(...arr));
+
+        console.log("max value : " + Math.max(...arr));
+
+        let filt=arr.filter((n)=>{return n>50})
+        console.log("values more than 50 : " + filt);
+
+    </script>
+</body>
+</html>

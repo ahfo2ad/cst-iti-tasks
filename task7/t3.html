@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv {
+            width: 300px;
+            border: 5px solid white;
+            /* border-style: dotted */
+        }
+        table {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, laborum fugiat accusantium repellat obcaecati, 
+        vero sequi recusandae nemo veritatis asperiores dicta deleniti odit ratione cumque ea minima officia. Atque, vel.
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>border color</th>
+            <th>border style</th>
+            <th>font size</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" class="color red" name="color"  id="red" onclick="redco()">
+                <label for="red">red</label>
+            </td>
+            <td>
+                <input type="radio" class="" name="border"  id="dashed" onclick="dashedbord()">
+                <label for="dashed">dashed</label>
+            </td>
+            <td>
+                <input type="radio" class="" name="font"  id="f10" onclick="size10()">
+                <label for="f10">10px</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" class="color blue" name="color"  id="blue" onclick="blueco()">
+                <label for="blue">blue</label>
+            </td>
+            <td>                    
+                <input type="radio" class="" name="border"  id="dotted" onclick="dottedbord()">
+                <label for="dotted">dotted</label>
+            </td>
+            <td>                    
+                <input type="radio" class="" name="font"  id="f20" onclick="size20()">
+                <label for="f20">20px</label>
+            </td>
+        </tr>
+        <tr>
+            <td>                    
+                <input type="radio" class="color black" name="color"  id="black" onclick="balckco()">
+                <label for="black">black</label>
+            </td>
+            <td>                    
+                <input type="radio" class="" name="border"  id="solid" onclick="solidbord()">
+                <label for="solid">solid</label>
+            </td>
+            <td>                    
+                <input type="radio" class="" name="font"  id="f25" onclick="size25()">
+                <label for="f25">25px</label>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        var x = document.getElementById("mydiv");
+
+        function redco() {
+            
+            var y = document.getElementById("red");
+              
+            x.style.borderColor = "red";
+        }
+        function blueco() {
+            
+            var y = document.getElementById("blue");
+              
+            x.style.borderColor = "blue";
+        }
+        function balckco() {
+            
+            var y = document.getElementById("black");
+   
+            x.style.borderColor = "black";
+        }
+        function dashedbord() {
+
+            var y = document.getElementById("dashed");
+
+            x.style.borderStyle = "dashed";
+
+        }
+        function dottedbord() {
+            
+            var y = document.getElementById("dotted");
+
+            x.style.borderStyle = "dotted";
+        }
+        function solidbord() {
+            
+            var y = document.getElementById("solid");
+
+            x.style.borderStyle = "solid";
+        }
+        function size10() {
+
+            var y = document.getElementById("f10");
+
+            x.style.fontSize = "10px";
+        }
+        function size20() {
+
+            var y = document.getElementById("f20");
+
+            x.style.fontSize = "20px";
+        }
+        function size25() {
+
+            var y = document.getElementById("f25");
+
+            x.style.fontSize = "25px";
+        }
+    </script>
+</body>
+</html>

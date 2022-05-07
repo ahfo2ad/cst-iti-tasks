@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+    margin: 20px auto;
+    text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        async function allusers() {
+            let users = await fetch("https://jsonplaceholder.typicode.com/users");
+            let jsonuserconvert = await users.json();
+            // create table
+            document.write('<table border="1" style= "width:500px; margin:20px auto; text-align:center;">');
+            document.write(`<tr><th>Name</th><th>Email</th></tr>`);
+            jsonuserconvert.forEach((user) => { 
+
+                document.write(`<tr>`);
+                document.write(`<td>${user.name}</td>`);
+                document.write(`<td>${user.email}</td>`);
+
+            })
+            document.write(`</tr></table>`);
+        }
+        allusers();
+    </script>
+</body>
+</html>

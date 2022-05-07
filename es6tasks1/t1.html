@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // define array
+        let arr = [100, 200, -50, 20, 90, 50, -20];
+
+        // sorting fun 
+        arr.sort(function (a, b) { return a - b; }); 
+
+        // sorting ascending
+        console.log("descending " + arr);
+        //sorting descending
+        console.log("descending " + arr.reverse());
+
+        // no.s greater than 50 
+        const result = arr.filter(checkgreater);
+        console.log(result.join(","));
+
+        function checkgreater(arr) {
+        return arr > 50;
+        }
+
+            // min value
+        console.log("min value = " + Math.min(...arr));
+        // max value
+        console.log("max value = " + Math.max(...arr));
+    </script>
+</body>
+</html>

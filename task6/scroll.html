@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+</head>
+<body onload="autoclose();">
+    <h1>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum cum dicta repellat? 
+        A harum itaque explicabo dicta, ab, sunt corrupti sit nemo fugiat totam cumque voluptatibus omnis unde blanditiis neque
+    </h1>
+
+    <script>
+
+        function autoclose() {
+
+            var scrolling = scrollBy(0, 100);
+            var time = setInterval("autoclose()", 200);
+
+            if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                close();
+            }
+        }
+    </script>
+</body>
+</html>

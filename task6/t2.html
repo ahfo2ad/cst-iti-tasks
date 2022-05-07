@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var names = randomnames(['ahmk', 'momo', 'ibrah', 'salah', 'jnjnjnjn']);
+
+            
+
+        function randomnames(names) {
+
+            var outputnames = [],
+                n;
+
+            for (var i = 0, len = Math.floor(names.length / 2); i < len; i++) {
+
+                n = Math.floor(Math.random() * names.length);
+
+                outputnames.push(names[n]);
+                
+                names.splice(n, 1);
+            }
+            return {
+                'outputnames': outputnames
+            };
+        }
+
+var outputnames = names.outputnames;
+
+
+document.write(outputnames);
+    </script>
+</body>
+</html>

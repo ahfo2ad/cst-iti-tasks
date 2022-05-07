@@ -1,0 +1,44 @@
+.container {
+    width: 500px;
+    /* border: 1px solid; */
+}
+.head, .second, .directions  {
+    border-bottom: 2px solid gray;
+}
+.head h5, .second p, .directions p, .comments p, .footer p {
+    color: #A4A408;
+    text-align: center;
+    background-color: #F0F0F0;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+.head p {
+    margin: 0;
+}
+.second p, .directions p, .comments p, .footer p {
+    text-align: left;
+    text-transform: uppercase;
+}
+.directions li span {
+    font-weight: bold;
+}
+.comments span {
+    display: block;
+    background-color: #f3f391;
+    margin: 15px;
+    font-style: italic;
+}
+.comments span .name {
+    margin: 0;
+    padding-top: 10px;
+}
+.footer a {
+    display: block;
+    color: #A4A408;
+}
+.footer .imlink {
+    display: inline;
+}
+.footer .imlink img {
+    width: 80px;
+}

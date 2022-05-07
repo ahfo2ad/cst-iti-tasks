@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>child</h1>
+
+    <script>
+
+        var p = "mfoperm34rfc";
+  
+        var i =0;
+
+        // console.log(p[i]);
+
+        function startshow() {
+           t= setInterval(function disp() {
+
+                i++;
+
+                p[i]+=p[i];
+
+                // console.log(p[i]);
+                document.write(p[i]);
+
+                if (i >= p.length-1) {
+
+                    clearInterval(t);
+                    window.close();
+                }
+            }, 1000);
+        }
+        startshow();
+    </script>
+</body>
+</html>

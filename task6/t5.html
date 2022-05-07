@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        // count down function
+
+        var time = 10;
+        var countdown = setInterval(function(){
+            if(time <= 0){
+                clearInterval(countdown);
+            }
+
+            // console.log(time);
+            document.write("<h1>" + time + "</h1>");
+            
+            time--;
+            
+
+        }, 700);
+
+        //change background color function
+
+        var arr = ["red", "green", "navy", "pink", "yellow", "lightpink", "gray", "lightgray", "lightgreen", "lightyellow"];
+
+        function getRandomIndex(min, max) {
+            return Math.floor(Math.random() * (max - min )) + min;
+            
+        }
+        
+
+        var t = setInterval(function changebgcolor() {
+
+            if( time == 0) {
+                clearInterval(t);
+            }
+
+            document.body.style.backgroundColor = arr[getRandomIndex(0, arr.length -1)];
+
+        }, 700);
+
+        
+        
+
+        // function timedown(n) {
+        //     console.log(n);
+        //     return n ? timedown(n-1) : 0;
+        // }
+        // timedown(10);
+    </script>
+</body>
+</html>

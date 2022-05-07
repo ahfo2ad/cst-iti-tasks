@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // declaring variables
+
+        var fno = "";
+            lno = "",
+            arr = ["010", "011", "012", "015"];
+            // checker = false;
+
+
+        // for(var i in arr) {
+        //     console.log(arr[i]);
+        // }
+
+
+        function removeSpacing(str) {
+            return str.trim().length === 0;
+        }
+
+        function mainfun(){
+
+            originalNumber = prompt("Enter your phone no like this 010-64205145");
+
+            if(originalNumber.charAt(3) == "-"){
+
+                fno = originalNumber.substr(0,3);
+                lno = originalNumber.substr(4,10);
+
+                // console.log(fno);
+                // console.log(lno);
+            } 
+            else {
+
+                alert("enter numbers only");
+                mainfun();
+            }
+
+            //validation of the number
+            
+            if(!isNaN(fno && lno) && !removeSpacing(fno && lno) ){
+
+                if( fno.length == "3" && lno.length == "8" && arr.includes(fno)) {  // check if first number in array
+
+
+                    // checker = true;
+
+                    // validated = fno + "-" + lno;
+                    // alert("number is valid, number is: " + validated);
+                    document.write("Done " + fno + "-" + lno);
+                }
+                else{
+
+                    // console.log(fno.length);
+                    // console.log(lno.length);
+
+                    alert("enter 11 number separated by - ");
+                    mainfun();
+                }
+            }
+            else{
+
+                alert("enter valid number");
+                mainfun();
+            }
+        }
+
+        mainfun();
+        // console.log(fno);
+        // console.log(lno);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

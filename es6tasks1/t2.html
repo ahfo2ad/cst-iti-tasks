@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // first way
+
+        // function getResult(op, ...myarr) {
+
+        //     if(op == "+") {
+
+        //         return ("sum = " + eval(myarr.join(op)));
+        //     }
+        //     else if(op == "*") {
+        //         return ("multiply = " + eval(myarr.join(op)));
+        //     }
+        // }
+
+        // let myarr = [20, 30, 10, 20, 30, 40, 50, 5];
+
+        //     // summing
+        //     // console.log("sum = " + getResult("+", ...myarr));
+        //     console.log(getResult("+", ...myarr));
+
+        //     // multiplication
+        //     // console.log("multiply = " + getResult("*", ...myarr));
+        //     console.log(getResult("*", ...myarr));
+
+        // second way 
+
+        let myarr = [20, 30, 10, 20, 50, 40, 50, 5];
+
+        let operator = {
+
+            '*' : 'multiplication',
+            '+' : 'sum',
+            '-' : 'sub'
+        }
+     
+        function getResult(op, ...myarr) {
+
+            console.log(`${operator[op]} = ${(eval(myarr.join(op)))}`);
+        }
+
+        getResult('+', ...myarr);
+        getResult('*', ...myarr);
+
+        
+        </script>
+</body>
+</html>

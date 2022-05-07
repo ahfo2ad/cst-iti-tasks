@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // declaring variables
+
+        var fno = "";
+            lno = "",
+            arr = ["010", "011", "012", "015"];
+
+        // trimming and remove spaces 
+
+        function removeSpacing(str) {
+            return str.trim().length === 0;
+        }
+
+        // main function 
+
+        function mainfun(){
+
+            originalNumber = prompt("Enter your phone no like this 010-64205145");
+
+            // check if number contains (-) or not and no space at the end 
+            
+            if(originalNumber.charAt(3) == "-" && originalNumber.substr(-1) != " "){
+
+                fno = originalNumber.substr(0,3);
+                lno = originalNumber.substr(4,10);
+            } 
+            else {
+
+                alert("enter numbers only");
+                mainfun();
+            }
+
+            //validation of the number
+            
+            if(!isNaN(fno && lno) && !removeSpacing(fno && lno) ){
+
+                if( fno.length == "3" && lno.length == "8" && arr.includes(fno)) {  // check if first number in array
+
+                    document.write("Done " + fno + "-" + lno);
+                }
+                else{
+
+                    alert("enter 11 number separated by - ");
+                    mainfun();
+                }
+            }
+            else{
+
+                alert("enter valid number");
+                mainfun();
+            }
+        }
+
+        mainfun();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

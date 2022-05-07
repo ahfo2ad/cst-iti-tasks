@@ -1,0 +1,31 @@
+.main {
+    margin-top: 150px;
+    text-align: center;
+}
+.main .backgr {
+    background-color: #4F81BD;
+    color: white;
+}
+/* tr {
+    border: 1px solid black;
+} */
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+.main .backgr td {
+    border: none;
+    margin: 0;  
+}
+.secnd td:not(.nocol) {
+    background-color: #B8CCE4;
+}
+.thrd td:not(.nocol) {
+    background-color: #DBE5F1;
+}
+.nocol {
+    color: #777;
+    text-decoration: underline;
+    font-style: italic;
+}

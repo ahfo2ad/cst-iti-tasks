@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv {
+            width: 300px;
+            /* border: 5px solid white; */
+            /* border-style: dotted */
+        }
+        table {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, laborum fugiat accusantium repellat obcaecati, 
+        vero sequi recusandae nemo veritatis asperiores dicta deleniti odit ratione cumque ea minima officia. Atque, vel.
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>border color</th>
+            <th>border style</th>
+            <th>font size</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" value="red" name="color"  id="red">
+                <label for="red">red</label>
+            </td>
+            <td>
+                <input type="radio" value="dashed" name="border"  id="dashed">
+                <label for="dashed">dashed</label>
+            </td>
+            <td>
+                <input type="radio" value="10px" name="font"  id="f10">
+                <label for="f10">10px</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" value="blue" name="color"  id="blue">
+                <label for="blue">blue</label>
+            </td>
+            <td>                    
+                <input type="radio" value="dotted" name="border"  id="dotted">
+                <label for="dotted">dotted</label>
+            </td>
+            <td>                    
+                <input type="radio" value="20px" name="font"  id="f20">
+                <label for="f20">20px</label>
+            </td>
+        </tr>
+        <tr>
+            <td>                    
+                <input type="radio" value="black" name="color"  id="black">
+                <label for="black">black</label>
+            </td>
+            <td>                    
+                <input type="radio" value="solid" name="border"  id="solid">
+                <label for="solid">solid</label>
+            </td>
+            <td>                    
+                <input type="radio" value="25px" name="font"  id="f25">
+                <label for="f25">25px</label>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        // getting the div
+
+        var x = document.getElementsByClassName("mydiv");
+
+        // applystyling (radio input name, style property in js camel case)
+
+        function applystyling(namefromhtml, styling){
+
+            var elementName = document.getElementsByName(namefromhtml);
+
+            for (var i = 0; i < elementName.length; i++){
+
+                elementName[i].onclick = function (){
+
+                    x[0].style[styling] = this.value;
+                }
+            }
+        }
+
+        // applying function applystyling after loading html page
+
+        window.onload = function (){
+
+            applystyling('font', 'fontSize');
+
+            applystyling('border', 'borderStyle');
+            
+            applystyling('color', 'borderColor');
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var arr1=[1, 2, 3],
+            arr2=[4, 5, 6];
+
+        document.write("<table border='1'><tr> <td>ST1</td> <td>ST2</td> <td>ST3</td> <td>total</td> </tr>");           
+
+            document.write("<tr>");
+            for(var i =0; i<arr1.length;i++) {                           
+                document.write("<td>" + arr1[i] + "</td>");               
+            }   
+            document.write("<td>" + eval(arr1.join("+")) + "</td>");
+            document.write("</tr>");
+
+            document.write("<tr>");
+            for(var i =0; i<arr2.length;i++) {                           
+                document.write("<td>" + arr2[i] + "</td>");               
+            }
+            document.write("<td>" + eval(arr2.join("+")) + "</td>");   
+            document.write("</tr>");
+            
+
+
+        document.write("</table>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

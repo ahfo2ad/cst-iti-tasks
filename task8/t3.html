@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+        }
+        .cont {
+            margin: 20px 0;
+        }
+        table {
+            width: 80%;
+            margin: 10px auto;
+        }
+        input {
+            padding: 10px;
+        }
+        .delete {
+            background-color: red;
+            color: white;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mydiv">news type
+        <input type="radio" value="red" name="color"  id="choose" checked>
+        <label for="red">sports</label>
+
+        <input type="radio" value="yellow" name="color"  id="choose">
+        <label for="yellow">social</label>
+
+        <input type="radio" value="green" name="color"  id="choose">
+        <label for="green">politics</label>
+
+        <div class="cont">
+            <input id="textdesc" type="text" name="desc">
+            <input id="button" type="button" value="ADD">
+
+        </div>
+        <table id="mytab" border="1">
+            <tr>
+                <th>no.</th>
+                <th>news</th>
+                <th>controls</th>
+            </tr>
+        </table>
+        
+    </div>
+
+    <script>
+        var container = document.getElementById("mydiv");
+            var back = document.getElementsByName('color');
+                    // var back = document.querySelectorAll("input[type='radio']");
+        var tabtr = document.getElementsByClassName("neeeeeeeew"); // last
+        var x = document.getElementById("textdesc");
+        var counter = 1;
+
+        document.getElementById("button").addEventListener('click', function (data) {
+            console.log(x.value);
+
+            // get x , y from deocument
+
+            var y = document.getElementById("mytab");
+
+            // create new tr
+
+            var newtr = document.createElement("tr");
+
+            // create new first td and append it to the tr
+
+            var newtd = document.createElement("td");
+
+            newtr.appendChild(newtd);
+
+            newtd.innerText += counter++;
+
+            // create new second td and append it to the tr
+
+            var sectd = document.createElement("td");
+
+            newtr.appendChild(sectd);
+
+            // create new third td and append it to the tr
+
+            var deletebtn = document.createElement("input");
+
+            deletebtn.setAttribute("type", "button");
+            deletebtn.setAttribute("value", "Delete");
+
+            deletebtn.className = "delete";
+
+            var thirdrt = document.createElement("td");
+
+            thirdrt.appendChild(deletebtn);
+            newtr.appendChild(thirdrt);
+
+            //tr attributes
+            newtr.setAttribute("name", "tttttt");
+
+            newtr.className = "neeeeeeeew";
+
+            // get value from input
+            sectd.innerText = x.value;
+
+            // append tr to the table
+            y.appendChild(newtr);
+
+            // =========================================================
+
+            // get value of colors
+
+            // var back = document.getElementById("choose");
+            // var back = document.querySelectorAll("input[type='radio']");
+            
+            // var back = document.getElementsByName('color');
+
+            // for (var i = 0; i < back.length; i++) {
+                
+            //     newtr.style.backgroundColor = back[i].value;
+            //     console.log(back[i].value);
+            // }
+
+            //======================
+            for(var i =0 ; i< tabtr.length;i++) {
+
+                for(var k = 0 ; k < back.length; k++) {
+
+                    if(back[k].value == 'red') {
+                        tabtr[i].style.backgroundColor = 'red';
+                        console.log(back[k].value);
+                    }
+                    else if(back[k].value == 'green') {
+                        tabtr[i].style.backgroundColor = 'green';
+                        console.log(back[k].value);
+                    }
+                    else {
+                        tabtr[i].style.backgroundColor = 'yellow';
+                        console.log(back[k].value);
+                    }
+
+                }
+
+                
+            }
+            
+
+
+            // ===================================================================
+
+        });
+        
+
+        // deleting function
+
+        document.addEventListener("click", function (e) {
+
+    
+            if (e.target.className == "delete") {
+
+                if (!confirm("Are You Sure To Delete data ?")) {
+
+                    data.preventDefault();
+                }
+                else {
+
+                    e.target.parentNode.parentNode.remove();
+
+                }
+
+            }
+        }); 
+
+                //=============================
+
+                    x.addEventListener('blur', function (e){
+                        if (!isNewTextValid(x.value)){
+                            // e.preventDefault();
+                            x.focus();
+                            x.select()
+                            
+                        }
+                    })
+                //============================
+
+        function isNewTextValid(value){
+            return value.match(/^[a-zA-z]{1}/)
+        }
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.container {
+    width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+}
+.row {
+    text-transform: capitalize;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+.row:last-child {
+    border-bottom: none;
+}
+.content {
+    position: relative;
+}
+.content img {
+    width: 60px;
+    border-radius: 50%;
+}
+.content span:first-of-type {
+    position: absolute;
+    left: 80px;
+    color: #06d0d0;
+    font-weight: bold;
+}
+.content p {
+    color: #777;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+.content span:last-of-type {
+    background-color: #DFDFDF;
+    padding: 5px 8px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}

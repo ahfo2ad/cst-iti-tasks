@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border:1px solid black;
+            padding:5px;
+            margin:10px auto;
+            width:500px;
+        }
+        input[type="text"]{
+            width:90%;
+            padding: 10px;
+        }
+        span{
+            display:none;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="actionpaage.html">
+        <table>
+             <!-- name -->
+            <tr>
+                <td rowspan="2"><label>Name: </label></td>
+                <td><input type="text" id="txtusername" name="username" /></td>
+            </tr>
+            <tr>
+                <td><span id="spanusername">Sorry Your UserName Is InCorrect</span></td>
+            </tr>
+
+            <!-- country -->
+            <tr>
+                <td rowspan="2"><label>country: </label></td>
+                <td>
+                    <select name="usercountry" id="txtusercont">
+                        <option value="0">...</option>
+                        <option value="1111">egypt</option>
+                        <option value="2222">usa</option>
+                        <option value="3333">spain</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span id="spanusercountry">Sorry you have to select country</span></td>
+            </tr>
+            <!-- zip -->
+            <tr>
+                <td rowspan="2"><label>zip: </label></td>
+                <td><input type="text" readonly id="txtuserzip" name="userzip" /></td>
+            </tr>
+            <tr>
+                <td><span id="spanuserzip">Sorry Your choose country</span></td>
+            </tr>
+            <!-- email -->
+            <tr>
+                <td rowspan="2"><label>userEmail</label></td>
+                <td><input type="text" id="txtuseremail" name="useremail" /></td>
+            </tr>
+            <tr>
+                <td><span id="spanuseremail">Sorry Your UserEmail Is InCorrect</span></td>
+            </tr>
+            <!-- hobbies -->
+            <tr>
+                <td rowspan="2"><label>hobbies: </label></td>
+                <td>
+                    <input type="checkbox" name="hobby" id="hobbing" value="writing">writing
+                    <label for="writing"></label>
+                    <input type="checkbox" name="hobby" id="hobbing" value="reading">reading
+                    <label for="reading"></label>
+                    <input type="checkbox" name="hobby" id="hobbing" value="swimming">swimming
+                    <label for="swimming"></label>
+                    <input type="checkbox" name="hobby" id="hobbing" value="sleeping">sleeping
+                    <label for="sleeping"></label>
+                </td>
+            </tr>
+            <tr>
+                <td><span id="spanuserhobbies">must choose hobby</span></td>
+            </tr>
+            <!-- submiting -->
+            <tr>
+                <td><input type="submit" value="Register" /></td>
+                <td><input type="reset" value="Clear" /></td>
+            </tr>
+           
+        </table>
+    </form>
+
+    <script>
+        window.addEventListener('load', function () {
+
+            // select all inputs 
+            txtusername = document.getElementById('txtusername');
+            txtusername.focus();
+            spanusername = document.getElementById('spanusername');
+            txtusername.addEventListener('blur', function () {
+
+                if (!isuserNameValid(txtusername.value)) {
+                    txtusername.focus();
+                    txtusername.select();
+                    spanusername.style.display = 'block';
+                    // display span 
+                } else {
+                    spanusername.style.display = 'none';
+                }
+            });
+
+            // country and zip
+            txtusercont = document.getElementById('txtusercont');
+            spanusercountry = document.getElementById('spanusercountry');
+            txtuserzip = document.getElementById('txtuserzip');
+            spanuserzip = document.getElementById('spanuserzip');
+
+            txtusercont.addEventListener('change', function() {
+
+                if(txtusercont.value == 0) {
+                    txtuserzip.value = 0;
+                    txtusercont.focus();
+                    // txtusercont.select();
+                    spanusercountry.style.display = 'block';
+                }
+                else {
+                    txtuserzip.value = txtusercont.value;
+                    spanusercountry.style.display = 'none';
+                }
+                
+            });
+
+            // check useremail
+            txtuseremail = this.document.getElementById('txtuseremail');
+            spanuseremail = this.document.getElementById('spanuseremail');
+            txtuseremail.addEventListener('blur', function () {
+                if (!isuseremailvalid(txtuseremail.value)) {
+                    txtuseremail.focus();
+                    txtuseremail.select();
+                    spanuseremail.style.display = "block";
+                } else {
+                    spanuseremail.style.display = "none";
+                }
+
+            });
+
+            // hobbies validation
+
+            // hobbing = document.querySelectorAll("input[type='checkbox']");
+            hobbing = document.getElementById('hobbing');
+            spanuserhobbies = document.getElementById('spanuserhobbies');
+            hobbing.addEventListener('click', function() {
+
+                if(isHobbiesChecked() == true) {        // means no checkbox choise
+                    spanuserhobbies.style.display = 'block';
+                }
+                else {
+                    spanuserhobbies.style.display = 'none';
+                }
+            });
+
+
+
+            // register submit event
+            this.document.forms[0].addEventListener('submit', function (data) {
+                
+                if (!(isuserNameValid(txtusername.value) && isuseremailvalid(txtuseremail.value) && txtuserzip.value != 0 && isHobbiesChecked() == false)) {
+                    // preven default 
+                    data.preventDefault();
+                }
+
+            });//end of submit
+
+            // register reset event
+            this.document.forms[0].addEventListener('reset', function (data) {
+                if (!confirm("Are You Sure To Clear Form ?")) {
+                    data.preventDefault();
+                }
+
+            });//end of reset
+
+
+        }); // end onload
+
+        // name
+        function isuserNameValid(un) {
+            // pattern : letters small or capital length :  4,8
+            var usernamepattern = /^[a-zA-Z]{4,8}$/;
+            return un.match(usernamepattern);// null | object
+        }
+        // email
+        function isuseremailvalid(ue) {
+            return ue.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
+        }
+        // hobbies
+        function isHobbiesChecked() {
+            // var hobbies = document.forms[0].elements['hobby'];
+            var hobbies = document.querySelectorAll("input[type='checkbox']");
+
+            var isNotChecked = true;
+            for (var i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked)
+                    isNotChecked = false;
+            }
+            return isNotChecked;
+
+        }
+    </script>
+</body>
+</html>

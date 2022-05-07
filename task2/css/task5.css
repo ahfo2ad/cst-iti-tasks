@@ -1,0 +1,74 @@
+.fullview {
+    width: 600px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+.fullview .header {
+    background-color: #95CA57;
+    padding: 30px 30px 10px;
+}
+.fullview .header h1 {
+    color: white;
+    margin: 0;
+}
+.container {
+    padding: 0 30px 15px;
+}
+.container .main {
+    border-bottom: 2px dashed #ccc;
+    padding-top: 10px;
+}
+.container .main:nth-child(3) {
+    border: none;
+}
+.container .main img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+.container .main h5 {
+    color: #115b3c;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px 0;
+} 
+.half label {
+    width: 48%;
+}
+.text input:first-of-type {
+
+    width: 40%;
+}
+.text input:last-of-type {
+        width: 50%;
+    margin-left: 34px;
+}
+.text select {
+    width: 49%;
+}
+input {
+    margin-bottom: 10px;
+}
+label {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.third label {
+    width: 30%;
+}
+.third label:not(:first-of-type) {
+    margin-left: 20px;
+}
+.inform input:not(:last-of-type) {
+    margin-right: 10px;
+}
+.selecting label:last-of-type {
+    margin-left: 5px;
+}
+.footer {
+    background-color: #95CA57;
+    padding: 10px 30px 0;
+}
+.footer input[type="submit"] {
+    padding: 5px 15px;
+}
